@@ -24,3 +24,10 @@ tts.save("output_results/"+file_txt_name+".mp3")
 
 toc = time.clock()
 print('Processing finished in :',str(toc-tic),'s')
+
+# TODO 
+'''
+make the script as a function 
+if __name__ == '__main__':
+
+	'''
