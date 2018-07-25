@@ -6,18 +6,18 @@ from gtts import gTTS
 # now you can call it directly with basename
 #print(basename("/a/b/c.txt"))
 
-def get_read_list_txt_file(input_folder):
+def get_read_list_txt_file(input_folder,extention):
 
 	readed_text_list = []
 	file_txt_name_list = []
 
 	os.chdir(input_folder)
-	for file in glob.glob("*.text"):
+	for file in glob.glob("*"+str(extention)):
 		#print(file)
 		#print(basename(file))
 		file_text_name = os.path.splitext(file)[0]
 		#print(file_text_name)
-		file = open(file_text_name+".text", "r") 
+		file = open(file_text_name+str(extention), "r") 
 		text = file.read() 
 		file_txt_name_list.append(file_text_name)
 		readed_text_list.append(text)
