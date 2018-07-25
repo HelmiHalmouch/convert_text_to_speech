@@ -3,24 +3,23 @@
 	then save the audio result as 
 	.mp3 file'''
 
- 
-
 import time 
 from gtts import gTTS
+from commune import get_read_list_txt_file
 
 tic = time.clock()
 
 ''' read the text from the file'''
-file_txt_name = "Texte_1"
 
-file = open("text_files/"+file_txt_name+".text", "r") 
-text = file.read() 
-#print(text)
+input_folder= "./text_files"
+file_txt_name_list, readed_text_list = get_read_list_txt_file(input_folder)
 
 ''' write the audio file'''
+output_folder = "output_results/"
 
-tts = gTTS(text, lang='en')
-tts.save("output_results/"+file_txt_name+".mp3")
+for i in range(0,len(file_txt_name_list)):
+	tts = gTTS(str(readed_text_list[i]), lang='en')
+	tts.save(str(file_txt_name_list[i])+".mp3")
 
 toc = time.clock()
 print('Processing finished in :',str(toc-tic),'s')
