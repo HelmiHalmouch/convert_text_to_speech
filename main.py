@@ -23,11 +23,13 @@ def run_main_convert_text2speech(input_folder,output_folder,extention):
 if __name__ == '__main__':
 
 	tic = time.clock()
+
+	print("---> please wait!")
 	
 	input_folder= "./text_files"
 	output_folder = "output_results/"
 	
-	extention = ".docx"
+	extention = ".text"
 	
 	run_main_convert_text2speech(input_folder,output_folder,extention)
 	
